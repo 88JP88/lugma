@@ -1,0 +1,2 @@
+# lugma
+academic administrator
