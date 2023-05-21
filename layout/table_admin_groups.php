@@ -41,8 +41,8 @@
     data.groups.forEach(group => {
       const row = document.createElement("tr");
       row.innerHTML = `
-      <td><a class="btn btn-primary" href="controller/controller_put_alert.php?id=${alert.id}">Administrar</a>
-      <a class="btn btn-secondary" href="controller/controller_del_alert.php?id=${alert.id}">Ingresar</a>
+      <td><a class="btn btn-primary" href="admin_groups.php?id=${group.id}&profile=${group.profile}" target="_blank">Administrar</a>
+      <a class="btn btn-secondary" href="controller/controller_del_alert.php?id=${group.id}">Ingresar</a>
       </td>
         <td>${group.name}</td>
         <td>${group.description}</td>
