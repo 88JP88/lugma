@@ -136,13 +136,13 @@ $(document).ready(function() {
 	</style>
 </head>
 <body>
-	<button onclick="ejecutarFunciones()">Mostrar alerta</button>
+	<!--<button onclick="ejecutarFunciones()">Mostrar alerta</button>-->
 	
 	
 	
 	
 	<?php
-	
+	/*
 	echo '
 	<script>
 
@@ -174,7 +174,7 @@ function ejecutarFunciones() {
 
 
 
-
+*/
 
 
 ?>
