@@ -13,7 +13,7 @@
         
     
         
-        echo $character->username."</h5>";
+        ;
           
        
         echo '

@@ -10,6 +10,7 @@ $user=$character->user_id;
 $name=$_POST['name'];
 $last_name=$_POST['lname'];
 $contact=$_POST['cont'];
+$public=$_POST['public'];
 
 
 // $ch = curl_init($url);
@@ -26,7 +27,8 @@ $contact=$_POST['cont'];
                   'user_id' =>$_SESSION['user_id'], 
                   'name' => $name,
                   'last_name' => $last_name,
-                  'contact' => $contact
+                  'contact' => $contact,
+                  'public' => $public
                   );
               //$payload = http_build_query($data);
               // codificar el array asociativo en JSON
