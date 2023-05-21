@@ -9,6 +9,7 @@ require_once 'view/view_session.php';
 
 
 // Define la clase de cola
+/*
 class Queue {
     private $queue;
 
@@ -54,6 +55,7 @@ $queue->enqueue(function() {
 
 // Ejecuta todas las funciones en la cola
 $queue->process();
+*/
 ?>
 
 
