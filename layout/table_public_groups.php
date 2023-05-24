@@ -42,8 +42,8 @@
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      <a class="btn btn-secondary" href="controller/controller_del_alert.php?id=${alert.id}">Ingresar</a>
-      </td>
+      <a class="btn btn-primary" href="group.php?id=${group.id}&profile=${group.profile}&my_profile=${profileId1111q}" target="_blank">Ingresar</a>
+        </td>
         <td>${group.name}</td>
         <td>${group.description}</td>
         <td>${group.status}</td>
