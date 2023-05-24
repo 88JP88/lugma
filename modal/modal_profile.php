@@ -17,7 +17,8 @@
    // echo ''.$_SESSION['userinfo'].'</p>'
    ; 
     
-    echo ' <form method="post" action="controller/controller_put_users.php"><div id="schedule-div"></div><script>const apiUrl11 = "http://localhost/lugmacore/apiUsers/v1/get/'.$_SESSION['usuario'].'";</script>';
+    echo ' <form method="post" action="controller/controller_put_users.php"><div id="schedule-div"></div>
+    <script>const apiUrl11 = "http://localhost/lugmacore/apiUsers/v1/get/'.$_SESSION['usuario'].'";</script>';
     echo '<script>
         // Función para obtener los datos del API
         async function getCharacters11() {

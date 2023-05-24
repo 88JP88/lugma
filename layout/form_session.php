@@ -204,7 +204,7 @@ function ejecutarFunciones() {
 
     
 	<footer>
-		<p>Derechos reservados &copy; <?php echo $ano_actual;
+		<p>Derechos reservados &copy; <?php echo $ano_actual." <br>version ".$_SESSION['current_version'];
 ?></p>
 	</footer>
 </body>
