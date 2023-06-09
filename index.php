@@ -11,31 +11,14 @@ require_once 'env/domain.php';
 ?>
 
 
-<?php
-// Crear el primer array con 5 campos
-$array1 = array(
-    "campo1" => "valor1",
-    "campo2" => "valor2",
-    "campo3" => "valor3",
-    "campo4" => "valor4",
-    "campo5" => "valor5"
-);
 
-// Crear el segundo array con 7 campos
-$array2 = array(
-    "campo6" => "valor6",
-    "campo7" => "valor7",
-    "campo8" => "valor8",
-    "campo9" => "valor9",
-    "campo10" => "valor10",
-    "campo11" => "valor11",
-    "campo12" => "valor12"
-);
-
-// Unir los dos arrays en uno solo
-$mergedArray = array_merge($array1, $array2);
-
-echo json_encode($mergedArray)."<br>";
-// Mostrar el resultado como un comentario
-echo print_r($mergedArray, true);
-?>
+<footer>
+		<p>Derechos reservados &copy; <?php 
+    $ano_actual = date('Y');
+    require_once 'version/version.php';
+$version_view=new model_ver;
+$version=$version_view->versioning();
+    echo $ano_actual." <br>version ".$version;
+    $_SESSION['current_version']=$version;
+?></p>
+	</footer>

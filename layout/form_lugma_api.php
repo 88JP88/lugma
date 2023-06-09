@@ -63,4 +63,13 @@ session_start();
 
 </div>
 
-
+<footer>
+		<p>Derechos reservados &copy; <?php 
+    $ano_actual = date('Y');
+    require_once 'version/version.php';
+$version_view=new model_ver;
+$version=$version_view->versioning();
+    echo $ano_actual." <br>version ".$version;
+    $_SESSION['current_version']=$version;
+?></p>
+	</footer>

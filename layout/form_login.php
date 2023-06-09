@@ -29,7 +29,16 @@
 
     
 </form>
-
+<footer>
+		<p>Derechos reservados &copy; <?php 
+    $ano_actual = date('Y');
+    require_once 'version/version.php';
+$version_view=new model_ver;
+$version=$version_view->versioning();
+    echo $ano_actual." <br>version ".$version;
+    $_SESSION['current_version']=$version;
+?></p>
+	</footer>
 
 <!-- Modal 1 -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -138,6 +147,7 @@ echo '<script>sessionStorage.removeItem("username");</script>';
 </form>
 
       </body>
+      
 </html>
 
 
