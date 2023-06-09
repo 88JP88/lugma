@@ -67,6 +67,8 @@ if($response1=="true"){
 }
 if($response1!="true"){
   echo $response1;
+  header ('Location: ../login.php');
+
 }
 
 
