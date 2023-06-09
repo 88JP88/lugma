@@ -5,8 +5,9 @@
 	<title>Inicio - Mi sitio web</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../style/estilo.css">
-    
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+	<link rel="icon" type="image/x-icon" href="public/images/LUGMA(5).png">
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -41,7 +42,7 @@
 				</ul>
 				<!-- Logo en la parte derecha del navbar -->
 				<a class="navbar-brand ml-auto" href="#">
-					<img src="logo.png" width="30" height="30" alt="Logo">
+					<img src="public/images/LUGMA(5).png" width="30" height="30" alt="Logo">
 				</a>
 			</div>
 		</nav>

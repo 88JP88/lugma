@@ -1,12 +1,14 @@
 <?php
 $id = $_GET['id'];
 $profile = $_GET['profile'];
-
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 echo '<br><br><br><br><br><br>
 
 <form method="post" action="controller/controller_put_admin_groups.php?id='.$id.'&profile='.$profile.'">
 <div class="login"><script>
-const apiUrl4 = `http://localhost/lugmacore/apiTools/v1/getModerGroupById/' . $id . '/' . $profile . '`;
+const apiUrl4 = `'.$sub_domain.'/lugmacore/apiTools/v1/getModerGroupById/' . $id . '/' . $profile . '`;
 </script><div id="task-div" class="task-container"></div>';
 echo '
   <script>
@@ -17,13 +19,13 @@ echo '
         .then(response => response.json())
         .then(data => {
           // Generamos el HTML ordenado con los datos
-          const tasksHTML = data.groups.map(group => `
+          const tasksHTML = data.group_constructor.map(group => `
           
             <div class="group-card">
             
               <h3>${group.id}</h3>
               <p><strong>Id Creador:</strong> ${group.profile}</p>
-              <p><strong>Creador:</strong> ${group.maker}</p>
+              <p><strong>Creador:</strong> ${group.profile}</p>
               <p><strong>Miembros:</strong> ${group.members}</p>
               <p><strong>Administrador:</strong> ${group.responsible_id}</p>
               <p><strong>Moderador:</strong> ${group.responsible_id2}</p>
@@ -64,130 +66,3 @@ echo '
   </script></div></form>
 ';
 ?>
-
-<style>
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .task-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .task-card {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #ccc;
-    width: 300px;
-  }
-
-  .task-card h3 {
-    margin-top: 0;
-  }
-
-  .task-card p {
-    margin: 0;
-    font-size: 14px;
-  }
-
-  .task-card a {
-    display: block;
-    margin-top: 10px;
-  }
-
-  .btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-
-  .btn:hover {
-    background-color: #0069d9;
-    color: #fff;
-  }
-
-  body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-.container {
-  margin: 20px;
-}
-
-.forum-post {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.forum-post h2 {
-  margin-top: 0;
-}
-
-.post-info {
-  color: #666;
-  font-size: 14px;
-}
-
-.post-content {
-  margin-top: 10px;
-}
-
-</style>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Foro</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>Foro de Discusión</h1>
-  </header>
-
-  <div class="container">
-    <div class="forum-post">
-      <h2>Título del tema</h2>
-      <p class="post-info">Autor - Fecha de publicación</p>
-      <p class="post-content">Contenido del mensaje del foro.</p>
-    </div>
-
-    <div class="forum-post">
-      <h2>Título del tema</h2>
-      <p class="post-info">Autor - Fecha de publicación</p>
-      <p class="post-content">Contenido del mensaje del foro.</p>
-    </div>
-
-    <!-- Agrega más posts aquí -->
-
-    <div class="forum-post">
-      <h2>Título del tema</h2>
-      <p class="post-info">Autor - Fecha de publicación</p>
-      <p class="post-content">Contenido del mensaje del foro.</p>
-    </div>
-  </div>
-</body>
-</html>

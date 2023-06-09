@@ -16,9 +16,13 @@
     <p>';
    // echo ''.$_SESSION['userinfo'].'</p>'
    ; 
-    
+   require_once 'env/domain.php';
+
+
+   $sub_domaincon = new model_dom();
+   $sub_domain = $sub_domaincon->dom();
     echo ' <form method="post" action="controller/controller_put_users.php"><div id="schedule-div"></div>
-    <script>const apiUrl11 = "http://localhost/lugmacore/apiUsers/v1/get/'.$_SESSION['usuario'].'";</script>';
+    <script>const apiUrl11 = "'.$sub_domain.'/lugmacore/apiUsers/v1/get/'.$_SESSION['usuario'].'";</script>';
     echo '<script>
         // Función para obtener los datos del API
         async function getCharacters11() {

@@ -6,7 +6,9 @@ $profile=$_GET['profile'];
 $my_profile=$_GET['my_profile'];
 $group=$_GET['id'];
 
-
+require_once '../env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -14,7 +16,7 @@ $group=$_GET['id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiTools/v1/postDis/';
+              $url = ''.$sub_domain.'/lugmacore/apiTools/v1/postDis/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(

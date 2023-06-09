@@ -12,6 +12,9 @@ $last_name=$_POST['lname'];
 $contact=$_POST['cont'];
 $public=$_POST['public'];
 
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -20,7 +23,7 @@ $public=$_POST['public'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/putUser/';
+              $url = ''.$sub_domain.'/lugmacore/apiUsers/v1/putUser/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(

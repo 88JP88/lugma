@@ -1,10 +1,30 @@
-<?php session_start();?>
+<?php session_start();
+
+
+echo '<script>
+
+const user_rol = "' . $_SESSION["user_rol"] . '";
+  sessionStorage.setItem("rol", user_rol);
+
+  const user_id = "' . $_SESSION["user_id"] . '";
+  sessionStorage.setItem("user_id", user_id);
+
+  const profile_id = "' . $_SESSION["profile_id"] . '";
+  sessionStorage.setItem("profile", profile_id);
+
+  const domain = "' . $_SESSION["domain"] . '";
+  sessionStorage.setItem("domain", domain);
+
+</script>';
+
+
+?>
 <head>
 	<title>Inicio - Mi sitio web</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/estilos.css">
-    
+    <link rel="icon" type="image/x-icon" href="public/images/LUGMA(5).png">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -15,7 +35,8 @@
 
 <header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="session.php">LUGMA</a>
+			<a class="navbar-brand" href="session.php"><img src="public/images/LUGMA(5).png" width="30" height="30" alt="Logo">
+				</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
   			</button>
@@ -26,6 +47,7 @@
 
 					<script>
     const lnameValue = sessionStorage.getItem("rol");
+	const my_profile = sessionStorage.getItem("profile");
 
 	if (lnameValue === "teacher" || lnameValue === "student" || lnameValue === "coordinate" || lnameValue === "api_user") {
         document.write(`
@@ -50,7 +72,7 @@
 	  <a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#modalAddAlert">Alertas</a>
       <a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#groupsModal">Grupos</a>
       
-    <a class="dropdown-item" href="#">Correo</a>
+    <a class="dropdown-item" href="mail.php?my_profile=${my_profile}">Correo</a>
   </div>
 </li>
 
@@ -105,13 +127,13 @@
 
 
 				<?php
-				echo '<a class="navbar-brand ml-auto"  data-toggle="modal" data-target="#alertModal">'.$_SESSION['alert_counter'].' Alertas</a>
+				echo '<a class="navbar-brand ml-auto"  data-toggle="modal" data-target="#alertModal">'.$_SESSION['profile_id'].' Alertas</a>
 				';?>
 				<a class="navbar-brand ml-auto" href="controller/controller_post_validate_out.php">#-Notificaciones</a>
 				<!-- Logo en la parte derecha del navbar -->
 				<a class="navbar-brand ml-auto" href="#">
-					<img src="logo.png" width="30" height="30" alt="Logo">
-				</a>
+				<img src="public/images/LUGMA(5).png" width="30" height="30" alt="Logo">
+					</a>
 						
 			
 			</div>

@@ -14,9 +14,14 @@
 
             <tbody>
              
-            <?php echo '<script>
+            <?php 
+            require_once 'env/domain.php';
+            $sub_domaincon=new model_dom;
+            $sub_domain=$sub_domaincon->dom();
+            
+            echo '<script>
   const profileId = sessionStorage.getItem("profile");
-  const apiUrla = `http://localhost/lugmacore/apiTools/v1/getAlert/${profileId}`;
+  const apiUrla = `'.$sub_domain.'/lugmacore/apiTools/v1/getAlert/${profileId}`;
 </script>';?>
 	
 	<?php

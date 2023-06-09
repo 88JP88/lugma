@@ -16,9 +16,15 @@
 
             <tbody>
              
-	<?php echo '<script>
+	<?php 
+  
+  require_once 'env/domain.php';
+  $sub_domaincon=new model_dom;
+  $sub_domain=$sub_domaincon->dom();
+  
+  echo '<script>
   const prof = sessionStorage.getItem("profile");
-  const apiUrl2 = `http://localhost/lugmacore/apiTools/v1/getPTasks/${prof}`;
+  const apiUrl2 = `'.$sub_domain.'/lugmacore/apiTools/v1/getPTasks/${prof}`;
 </script>';?>
 	
 	

@@ -6,7 +6,11 @@ $mail=$_POST['correo'];
 $word=$_POST['secword'];
 $sub=$_POST['sub'];
 
+require_once '../env/domain.php';
 
+
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -14,7 +18,9 @@ $sub=$_POST['sub'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/postSub/';
+
+  $conff='78989876';
+              $url = ''.$sub_domain.'/lugmacore/apiUsers/v1/postSub/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
@@ -39,7 +45,7 @@ $sub=$_POST['sub'];
               curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
               curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
              // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-              
+            
               // Ejecutar la solicitud y obtener la respuesta
               $response1 = curl_exec($curl);
               //var_dump($data);

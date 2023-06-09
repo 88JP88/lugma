@@ -6,7 +6,9 @@ $id=$_GET['id'];
 $day=$_GET['day'];
 $value=$_POST['valor'];
 
-
+require_once '../env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -15,7 +17,7 @@ $value=$_POST['valor'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/putSchedule/';
+              $url = ''.$sub_domain.'/lugmacore/apiTools/v1/putSchedule/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
@@ -42,6 +44,8 @@ $value=$_POST['valor'];
               curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
              // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
               
+// Establecer el encabezado con el API key
+
               // Ejecutar la solicitud y obtener la respuesta
               $response1 = curl_exec($curl);
               //var_dump($data);
@@ -60,8 +64,8 @@ if($response1 != "true"){
   $_SESSION["error"]=$response1;
 
 }
-
-
-
+echo $url;
+echo $response1;
+echo $_SESSION['user_id']." ".$value;
 header ('Location: controller_post_validate2.php');
 ?>

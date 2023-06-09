@@ -18,10 +18,15 @@
 
 
         <?php
+        require_once 'env/domain.php';
+
+
+        $sub_domaincon = new model_dom();
+        $sub_domain = $sub_domaincon->dom();
 echo '
 <script>
   const profilexxxxx = sessionStorage.getItem("profile");
-  const apiUrlxxxxx = `http://localhost/lugmacore/apiTools/v1/getGroupsTotalCounter/${profilexxxxx}`;
+  const apiUrlxxxxx = `'.$sub_domain.'/lugmacore/apiTools/v1/getGroupsTotalCounter/${profilexxxxx}`;
 
   // Función para obtener los datos del API
   async function getCharactersxxxx() {

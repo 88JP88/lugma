@@ -4,7 +4,9 @@ session_start();
 
 $id=$_SESSION['profile_id'];
 $alert_id=$_GET['id'];
-
+require_once '../env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -13,7 +15,7 @@ $alert_id=$_GET['id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiTools/v1/putAlert/';
+              $url = ''.$sub_domain.'/lugmacore/apiTools/v1/putAlert/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(

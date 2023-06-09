@@ -22,11 +22,15 @@
          
 	
 	<?php
+
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
 		
   const profileId11 = sessionStorage.getItem("profile");
-  const apiUrlq = `http://localhost/lugmacore/apiTools/v1/getResponsibleGroups/${profileId11}`;
+  const apiUrlq = `'.$sub_domain.'/lugmacore/apiTools/v1/getResponsibleGroups/${profileId11}`;
 
 
  // Función para obtener los datos del API
@@ -38,7 +42,7 @@
     const admingroupsTableBody = document.querySelector("#admingroups-table tbody");
     // Borramos los datos antiguos
     admingroupsTableBody.innerHTML = "";
-    data.groups.forEach(group => {
+    data.group_constructor.forEach(group => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td><a class="btn btn-primary" href="admin_groups.php?id=${group.id}&profile=${group.profile}" target="_blank">Administrar</a>
@@ -85,7 +89,7 @@
 echo '
 <script>
   const profilexx = sessionStorage.getItem("profile");
-  const apiUrlxx = `http://localhost/lugmacore/apiTools/v1/getGroupsHighCounter/${profilexx}`;
+  const apiUrlxx = `'.$sub_domain.'/lugmacore/apiTools/v1/getGroupsHighCounter/${profilexx}`;
 
   // Función para obtener los datos del API
   async function getCharactersx() {

@@ -14,9 +14,14 @@
 
             <tbody>
              
-	<?php echo '<script>
+	<?php 
+  require_once 'env/domain.php';
+  $sub_domaincon=new model_dom;
+  $sub_domain=$sub_domaincon->dom();
+  
+  echo '<script>
   const prof = sessionStorage.getItem("profile");
-  const apiUrl2 = `http://localhost/lugmacore/apiTools/v1/getUserGroups/'.$_GET['id'].'`;
+  const apiUrl2 = `'.$sub_domain.'/lugmacore/apiTools/v1/getUserGroups/'.$_GET['id'].'`;
 </script>';?>
 	
 	
@@ -36,7 +41,7 @@
     const personaltTableBody = document.querySelector("#personaltt-table tbody");
     // Borramos los datos antiguos
     personaltTableBody.innerHTML = "";
-    data.groups.forEach(group => {
+    data.group_constructor.forEach(group => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>${group.name} ${group.last_name}</td>

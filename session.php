@@ -3,8 +3,30 @@
 $url=$_SERVER['REQUEST_URI'];
 //$url="index.php";
 //header("Refresh: 60; URL=$url");
+
+require_once 'env/domain.php';
+
+
+   $sub_domaincon = new model_dom();
+   $sub_domain = $sub_domaincon->dom();
+   $_SESSION['domain']=$sub_domain;
+
 require_once 'view/view_session.php';
-//echo "<script>console.log('"; echo $_SESSION['userinfo']; echo "');</script>";
+echo '<script>
+
+const user_rol = "' . $_SESSION["user_rol"] . '";
+  sessionStorage.setItem("rol", user_rol);
+
+  const user_id = "' . $_SESSION["user_id"] . '";
+  sessionStorage.setItem("user_id", user_id);
+
+  const profile_id = "' . $_SESSION["profile_id"] . '";
+  sessionStorage.setItem("profile", profile_id);
+
+  const domain = "' . $_SESSION["domain"] . '";
+  sessionStorage.setItem("domain", domain);
+
+</script>';
 
 
 

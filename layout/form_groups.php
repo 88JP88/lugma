@@ -3,10 +3,27 @@ $id = $_GET['id'];
 $profile = $_GET['profile'];
 $my_profile = $_GET['my_profile'];
 
+
+
+echo '<script>
+
+
+
+  const domain = "' . $_SESSION["domain"] . '";
+  sessionStorage.setItem("domain", domain);
+
+</script>';
+
+
+
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 echo '<br><br><br><br><br><br>
 <div id="schedule-div"></div>
+<div id="schedule-div2"></div>
 <script>
-const apiUrl11 = "http://localhost/lugmacore/apiUsers/v1/getByProfile/'.$profile.'";</script><div id="task-div" class="task-container"></div>';
+const apiUrl11 = "'.$sub_domain.'/lugmacore/apiUsers/v1/getByProfile/'.$profile.'";</script><div id="task-div" class="task-container"></div>';
 
 echo '<script>
         // Función para obtener los datos del API
@@ -41,7 +58,7 @@ $my_profile = $_GET['my_profile'];
 
 echo '
 <script>
-const apiUrl11g = "http://localhost/lugmacore/apiUsers/v1/getMyProfileByProfile/'.$my_profile.'";</script>';
+const apiUrl11g = "'.$sub_domain.'/lugmacore/apiUsers/v1/getMyProfileByProfile/'.$my_profile.'";</script>';
 
 echo '<script>
         // Función para obtener los datos del API
@@ -73,7 +90,7 @@ $profile = $_GET['profile'];
 
 echo '
 <script>
-const apiUrl111 = "http://localhost/lugmacore/apiTools/v1/getGroupInfo/'.$id.'";</script><div id="task-div" class="task-container"></div>';
+const apiUrl111 = "'.$sub_domain.'/lugmacore/apiTools/v1/getGroupInfo/'.$id.'";</script><div id="task-div" class="task-container"></div>';
 
 echo '<script>
         // Función para obtener los datos del API
@@ -81,7 +98,7 @@ echo '<script>
             fetch(apiUrl111)
             .then(response => response.json())
             .then(data => {
-                const userData1 = data.groups[0];
+                const userData1 = data.group_constructor[0];
                 sessionStorage.setItem("group_id", userData1.id);
                 sessionStorage.setItem("group_name", userData1.name);
                 sessionStorage.setItem("maker_id", userData1.profile);
@@ -90,7 +107,7 @@ echo '<script>
                 sessionStorage.setItem("public_add", userData1.public_add);
                 sessionStorage.setItem("description", userData1.description);
                 sessionStorage.setItem("members", userData1.members);
-                sessionStorage.setItem("maker", userData1.maker);
+                
     
                 // Mostrar los datos en la pantalla
                 const scheduleDiv = document.querySelector("#schedule-div");
@@ -99,7 +116,7 @@ echo '<script>
                 <h5 align="center">Grupo: ${userData1.name}</h5>
                 <h5 align="center">Desripción: ${userData1.description}</h5>
                
-                <h5 align="center">Creador: ${userData1.maker}</h5>
+                <h5 align="center">Creador: ${userData1.username}</h5>
                 <h5 align="center">Miembros: ${userData1.members}</h5>
                 <h5 align="center">Auto añadir: ${userData1.auto_join}</h5>
                 <h5 align="center">Auto publicar: ${userData1.public_add}</h5>
@@ -123,7 +140,7 @@ $profile = $_GET['profile'];
 echo '<br>
 <div id="schedule-div"></div>
 <script>
-const apiUrl1111 = "http://localhost/lugmacore/apiTools/v1/getGroupInfoUser/'.$id.'/'.$profile.'";</script><div id="task-div" class="task-container"></div>';
+const apiUrl1111 = "'.$sub_domain.'/lugmacore/apiTools/v1/getGroupInfoUser/'.$id.'/'.$profile.'";</script><div id="task-div" class="task-container"></div>';
 
 echo '<script>
         // Función para obtener los datos del API
@@ -135,7 +152,7 @@ echo '<script>
                 sessionStorage.setItem("added_to_group", userData3.counter_group_user);
     
                 // Mostrar los datos en la pantalla
-                const scheduleDiv1 = document.querySelector("#schedule-div");
+                const scheduleDiv2 = document.querySelector("#schedule-div2");
                 scheduleDiv2.innerHTML = `
                 `;
             })
@@ -256,7 +273,8 @@ header {
             const id_grupo = sessionStorage.getItem("group_id");// Valor del ID que deseas obtener
   const profile_id = sessionStorage.getItem("profile");
   const my_profile_id = sessionStorage.getItem("my_profile");
-  const apiUrn = `http://localhost/lugmacore/apiTools/v1/getDis/${id_grupo}`;
+  const sub_domain=sessionStorage.getItem("domain");
+  const apiUrn = `${sub_domain}/lugmacore/apiTools/v1/getDis/${id_grupo}`;
 
   // Función para obtener los datos del API
   async function getCharactersn() {
@@ -305,7 +323,7 @@ header {
       const id_grupo = sessionStorage.getItem("group_id");// Valor del ID que deseas obtener
   const profile_id = sessionStorage.getItem("profile");
   const my_profile_id = sessionStorage.getItem("my_profile");
-  const apiUrn = `http://localhost/lugmacore/apiTools/v1/getDis/${id_grupo}`;
+  const apiUrn = `${sub_domain}/lugmacore/apiTools/v1/getDis/${id_grupo}`;
 
   // Función para obtener los datos del API
   async function getCharactersn() {

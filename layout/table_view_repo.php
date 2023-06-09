@@ -14,7 +14,12 @@
 
             <tbody>
              
-	<?php echo '<script>const apiUrl1 = "http://localhost/lugmacore/apiRepos/v1/get/'.$_SESSION['id'].'";</script>';?>
+	<?php
+  
+  require_once 'env/domain.php';
+  $sub_domaincon=new model_dom;
+  $sub_domain=$sub_domaincon->dom();
+  echo '<script>const apiUrl1 = "'.$sub_domain.'/lugmacore/apiRepos/v1/get/'.$_SESSION['id'].'";</script>';?>
 	
 	
 	

@@ -11,7 +11,9 @@ $pass=$_POST['pass'];
 $pass1=$_POST['pass1'];
 $pass2=$_POST['pass2'];
 
-
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -19,7 +21,7 @@ $pass2=$_POST['pass2'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/putPass/';
+              $url = ''.$sub_domain.'/lugmacore/apiUsers/v1/putPass/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(

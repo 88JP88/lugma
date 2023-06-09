@@ -1,9 +1,13 @@
 
 <?php
 session_start();
+
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/lugmacore/apiUsers/v1/get/".$_SESSION['usuario'],
+  CURLOPT_URL => "".$sub_domain."/lugmacore/apiUsers/v1/get/".$_SESSION['usuario'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_MAXREDIRS => 10,
@@ -27,6 +31,7 @@ $data = json_decode($_SESSION['userinfo']);
     $_SESSION['user_rol'] =$character->rol;
     $_SESSION['user_id'] =$character->user_id;
     $_SESSION['profile_id'] =$character->profile;
+    $_SESSION['username'] =$character->username;
     
     
   }
@@ -35,7 +40,7 @@ $data = json_decode($_SESSION['userinfo']);
 
   $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/lugmacore/apiTools/v1/getAlertCounter/".$_SESSION['profile_id'],
+  CURLOPT_URL => "".$sub_domain."/lugmacore/apiTools/v1/getAlertCounter/".$_SESSION['profile_id'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_MAXREDIRS => 10,
@@ -60,6 +65,7 @@ $data = json_decode($_SESSION['userinfo']);
     
     
   }
+  
 
 header ('Location: ../session.php');
 

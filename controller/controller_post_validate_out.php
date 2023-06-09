@@ -4,6 +4,9 @@
 session_start();
 $user=$_SESSION['usuario'];
 
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -11,7 +14,7 @@ $user=$_SESSION['usuario'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/validateOut/';
+              $url = ''.$sub_domain.'/lugmacore/apiUsers/v1/validateOut/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(

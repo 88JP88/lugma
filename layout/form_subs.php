@@ -28,10 +28,12 @@
   <label for="sub">Suscripción</label>
 <select id="sub" name="sub" class="btn btn-secondary">
 <?php
-
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/lugmacore/apiUsers/v1/getSubs",
+  CURLOPT_URL => "".$sub_domain."/lugmacore/apiUsers/v1/getSubs",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_MAXREDIRS => 10,
@@ -117,7 +119,7 @@ if ($err) {
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/lugmacore/apiUsers/v1/getSubs",
+  CURLOPT_URL => "".$sub_domain."/lugmacore/apiUsers/v1/getSubs",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_MAXREDIRS => 10,

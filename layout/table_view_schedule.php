@@ -17,9 +17,14 @@
 
             <tbody>
              
-	<?php echo '<script>
+	<?php
+  
+  require_once 'env/domain.php';
+  $sub_domaincon=new model_dom;
+  $sub_domain=$sub_domaincon->dom();
+  echo '<script>
   const userId = sessionStorage.getItem("user_id");
-  const apiUrl = `http://localhost/lugmacore/apiTools/v1/getSchedule/${userId}`;
+  const apiUrl = `'.$sub_domain.'/lugmacore/apiTools/v1/getSchedule/${userId}`;
 </script>';?>
 	
 	

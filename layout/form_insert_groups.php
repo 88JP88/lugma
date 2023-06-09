@@ -12,7 +12,11 @@
             <label for="res1">Administrador</label>
             
 <?php
-echo '<script>const apiUrl2q = "http://localhost/lugmacore/apiUsers/v1/getPublicUsers";</script>';
+
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
+echo '<script>const apiUrl2q = "'.$sub_domain.'/lugmacore/apiUsers/v1/getPublicUsers";</script>';
 ?>
 
 <select id="reposq-select" class="btn btn-secondary" name="res1"></select>

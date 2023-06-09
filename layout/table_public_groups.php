@@ -8,10 +8,11 @@
       <th>Estado</th>
       <th>Miembros</th>
       <th>Cantidad Máxima</th>
-      <th>Creador</th>
+      
       <th>Publico</th>
       <th>Auto añadir</th>
       <th>Auto publicar</th>
+      <th>Creador</th>
      
     </tr>
   </thead>
@@ -22,11 +23,15 @@
          
 	
 	<?php
+
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
 		
   const profileId1111q = sessionStorage.getItem("profile");
-  const apiUrlqqqz = `http://localhost/lugmacore/apiTools/v1/getPublicGroups/${profileId1111q}`;
+  const apiUrlqqqz = `'.$sub_domain.'/lugmacore/apiTools/v1/getPublicGroups/`;
 
 
  // Función para obtener los datos del API
@@ -38,18 +43,17 @@
     const publicgroupsTableBody = document.querySelector("#publicgroups-table tbody");
     // Borramos los datos antiguos
     publicgroupsTableBody.innerHTML = "";
-    data.groups.forEach(group => {
+    data.group_constructor.forEach(group => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      <a class="btn btn-primary" href="group.php?id=${group.id}&profile=${group.profile}&my_profile=${profileId1111q}" target="_blank">Ingresar</a>
+      <a class="btn btn-primary" href="group.php?id=${group.group_id}&profile=${group.profile}&my_profile=${profileId1111q}" target="_blank">Ingresar</a>
         </td>
         <td>${group.name}</td>
         <td>${group.description}</td>
         <td>${group.status}</td>
         <td>${group.members}</td>
         <td>${group.qty}</td>
-        <td>${group.maker}</td>
         <td>${group.public}</td>
         <td>${group.auto_join}</td>
         <td>${group.public_add}</td>
@@ -59,6 +63,22 @@
        
         
       `;
+
+      
+      // Obtener el objeto "users" del JSON
+const users = data.group_constructor;
+
+// Buscar el usuario correspondiente al perfil en el objeto "users"
+const user = users.find(user => user.profile === group.profile);
+
+// Agregar el valor de "username" del usuario a la tabla
+if (user) {
+  const username = user.username;
+  row.innerHTML += `<td>${username}</td>`;
+} else {
+  row.innerHTML += `<td>-</td>`;
+}
+
       publicgroupsTableBody.appendChild(row);
     });
   })
@@ -85,7 +105,7 @@
 echo '
 <script>
   const profilexxxw = sessionStorage.getItem("profile");
-  const apiUrlxxxw = `http://localhost/lugmacore/apiTools/v1/getGroupsPublicCounter/${profilexxxw}`;
+  const apiUrlxxxw = `'.$sub_domain.'/lugmacore/apiTools/v1/getGroupsPublicCounter/${profilexxxw}`;
 
   // Función para obtener los datos del API
   async function getCharactersxxw() {

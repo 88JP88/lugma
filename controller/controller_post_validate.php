@@ -4,7 +4,9 @@
 session_start();
 $user=$_POST['usuario'];
 $pass=$_POST['password'];
-
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -12,7 +14,7 @@ $pass=$_POST['password'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiUsers/v1/validate/';
+              $url = ''.$sub_domain.'/lugmacore/apiUsers/v1/validate/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
@@ -48,7 +50,7 @@ if($response1 == "true"){
   $_SESSION["mensaje"]="Bienvenid@";
   $_SESSION["error"]=$response1;
   $_SESSION['usuario']=$user;
-  header ('Location: controller_post_validate2.php');
+ header ('Location: controller_post_validate2.php');
 
 }
 if($response1 != "true"){
@@ -56,7 +58,7 @@ if($response1 != "true"){
   $_SESSION["mensaje"]="No iniciar sesión ";
   $_SESSION["error"]=$response1;
   $_SESSION['usuario']=$user;
-  
+ 
   header ('Location: controller_post_validate2.php');
 }
 

@@ -1,13 +1,11 @@
 <?php
 session_start();
-$data = json_decode($_SESSION['userinfo']);
-  foreach ($data->users as $character) {
-    
-   
-  }
-$username=$character->username;
-$id=$_GET['id'];
 
+$id=$_GET['id'];
+$id1=$_SESSION['usuario'];
+require_once '../env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -16,11 +14,11 @@ $id=$_GET['id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiRepos/v1/delLoged/';
+              $url = ''.$sub_domain.'/lugmacore/apiRepos/v1/delLoged/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
-                  'username' =>$username,
+                  'username' =>$id1,
                   'repo' => $id
                   );
               //$payload = http_build_query($data);
@@ -62,6 +60,6 @@ if($response1 != "true"){
 
 
 
-header ('Location: ../api_lugma.php');
+
 
 ?>

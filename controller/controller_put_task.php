@@ -7,7 +7,9 @@ $prior=$_POST['prior'];
 $id=$_SESSION['profile_id'];
 $task_id=$_GET['id'];
 
-
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -15,7 +17,7 @@ $task_id=$_GET['id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiTools/v1/putTask/';
+              $url = ''.$sub_domain.'/lugmacore/apiTools/v1/putTask/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
@@ -43,7 +45,11 @@ $task_id=$_GET['id'];
               curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
               curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
              // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-              
+             $headers = array(
+              'Content-Type: application/json'
+          );
+          curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+          
               // Ejecutar la solicitud y obtener la respuesta
               $response1 = curl_exec($curl);
               //var_dump($data);

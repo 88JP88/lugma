@@ -1,9 +1,11 @@
 <?php
 $id = $_GET['id'];
 $profile = $_GET['profile'];
-
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 echo '<div class="login"><script>
-const apiUrl4 = `http://localhost/lugmacore/apiTools/v1/getPTasksById/' . $id . '/' . $profile . '`;
+const apiUrl4 = `'.$sub_domain.'/lugmacore/apiTools/v1/getPTasksById/' . $id . '/' . $profile . '`;
 </script><div id="task-div" class="task-container"></div>';
 echo '
   <script>

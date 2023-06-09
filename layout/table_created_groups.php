@@ -8,10 +8,11 @@
       <th>Estado</th>
       <th>Miembros</th>
       <th>Cantidad Máxima</th>
-      <th>Creador</th>
+     
       <th>Publico</th>
       <th>Auto añadir</th>
       <th>Auto publicar</th>
+      <th>Creador</th>
       
     </tr>
   </thead>
@@ -22,11 +23,15 @@
          
 	
 	<?php
+
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
 		
   const profileId11111 = sessionStorage.getItem("profile");
-  const apiUrlqqqq = `http://localhost/lugmacore/apiTools/v1/getCreatedGroups/${profileId11111}`;
+  const apiUrlqqqq = `'.$sub_domain.'/lugmacore/apiTools/v1/getCreatedGroups/${profileId11111}`;
 
 
  // Función para obtener los datos del API
@@ -38,7 +43,7 @@
     const createdgroupsTableBody = document.querySelector("#createdgroups-table tbody");
     // Borramos los datos antiguos
     createdgroupsTableBody.innerHTML = "";
-    data.groups.forEach(group => {
+    data.group_constructor.forEach(group => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td><a class="btn btn-primary" href="maker_groups.php?id=${group.id}&profile=${group.profile}" target="_blank">Administrar</a>
@@ -49,18 +54,19 @@
         <td>${group.status}</td>
         <td>${group.members}</td>
         <td>${group.qty}</td>
-        <td>${group.maker}</td>
         <td>${group.public}</td>
         <td>${group.auto_join}</td>
         <td>${group.public_add}</td>
+        <td>${group.username}</td>
         
-
-        
-       
         
       `;
+
+    
       createdgroupsTableBody.appendChild(row);
-    });
+    }
+  
+  );
   })
   .catch(error => {
     console.error("Error:", error);
@@ -83,7 +89,7 @@
 echo '
 <script>
   const profilex = sessionStorage.getItem("profile");
-  const apiUrlx = `http://localhost/lugmacore/apiTools/v1/getGroupsMakerCounter/${profilex}`;
+  const apiUrlx = `'.$sub_domain.'/lugmacore/apiTools/v1/getGroupsMakerCounter/${profilex}`;
 
   // Función para obtener los datos del API
   async function getCharactersqqqqq() {

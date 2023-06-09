@@ -1,11 +1,6 @@
 <?php
 session_start();
-$data = json_decode($_SESSION['userinfo']);
-  foreach ($data->users as $character) {
-    
-   
-  }
-$username=$character->username;
+
 $tittle=$_POST['tittle'];
 $keywords=$_POST['keywords'];
 $type=$_POST['type'];
@@ -13,6 +8,9 @@ $public=$_POST['public'];
 $value=$_POST['value'];
 $id=$_GET['id'];
 
+require_once '../env/domain.php';
+$sub_domaincon = new model_dom();
+$sub_domain = $sub_domaincon->dom();
 
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -21,11 +19,11 @@ $id=$_GET['id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiRepos/v1/putLoged/';
+              $url = ''.$sub_domain.'/lugmacore/apiRepos/v1/putLoged/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
-                  'username' =>$username,
+                  'username' =>$_SESSION['usuario'],
                   'tittle' => $tittle,
                   'keywords' => $keywords,
                   'type' => $type,

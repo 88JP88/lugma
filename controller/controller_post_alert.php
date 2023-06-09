@@ -4,7 +4,9 @@ $task=$_POST['task'];
 $sdate=$_POST['sdate'];
 $id=$_SESSION['profile_id'];
 
-
+require_once '../env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
 // $ch = curl_init($url);
              // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
              // $response = curl_exec($ch);
@@ -12,12 +14,12 @@ $id=$_SESSION['profile_id'];
               //var_dump ($response);
             ////  $ss = json_encode($response);
   //echo $ss;
-              $url = 'http://localhost/lugmacore/apiTools/v1/postAlert/';
+              $url = ''.$sub_domain.'/lugmacore/apiTools/v1/postAlert/';
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
+                'sdate' => $sdate,
                   'value' =>$task,
-                  'sdate' => $sdate,
                   'profile_id' => $id
                   );
               //$payload = http_build_query($data);
@@ -30,12 +32,18 @@ $id=$_SESSION['profile_id'];
 //echo $payload;
               // Inicializar la sesión cURL
               $curl = curl_init();
-              
+              $conff='78989876';
               // Configurar las opciones de la sesión cURL
               curl_setopt($curl, CURLOPT_URL, $url);
               curl_setopt($curl, CURLOPT_POST, true);
-              curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+              curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($data));
               curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+              $headers = array(
+                'Content-Type: application/json',
+                'API-Key: ' . $conff
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        
              // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
               
               // Ejecutar la solicitud y obtener la respuesta

@@ -74,7 +74,10 @@
 <label for="sub">Suscripción</label>
 
 <?php
-echo '<script>const apiUrl2 = "http://localhost/lugmacore/apiUsers/v1/getSubs";</script>';
+require_once 'env/domain.php';
+$sub_domaincon=new model_dom;
+$sub_domain=$sub_domaincon->dom();
+echo '<script>const apiUrl2 = "'.$sub_domain.'/lugmacore/apiUsers/v1/getSubs";</script>';
 ?>
 
 <select id="repos-select" class="btn btn-secondary" name="sub"></select>
@@ -136,3 +139,5 @@ echo '<script>sessionStorage.removeItem("username");</script>';
 
       </body>
 </html>
+
+

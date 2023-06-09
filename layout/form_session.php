@@ -204,8 +204,15 @@ function ejecutarFunciones() {
 
     
 	<footer>
-		<p>Derechos reservados &copy; <?php echo $ano_actual." <br>version ".$_SESSION['current_version'];
+		<p>Derechos reservados &copy; <?php 
+    
+    require_once 'version/version.php';
+$version_view=new model_ver;
+$version=$version_view->versioning();
+    echo $ano_actual." <br>version ".$version;
+    $_SESSION['current_version']=$version;
 ?></p>
 	</footer>
 </body>
 </html>
+
