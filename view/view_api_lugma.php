@@ -10,8 +10,7 @@ require_once 'modal/modal_profile.php';
 require_once 'modal/modal_edit_profile.php';
 require_once 'modal/modal_change_password.php';
 
-require_once 'modal/modal_view_personal_tasks.php';
-require_once 'modal/modal_insert_task.php';
+
 
 require_once 'modal/modal_view_alerts.php';
 require_once 'modal/modal_insert_alert.php';
@@ -27,4 +26,6 @@ require_once 'modal/modal_public_groups.php';
 require_once 'modal/modal_edit_profile.php';
 require_once 'modal/modal_change_password.php';
 require_once 'layout/table_view_schedule.php';
+require_once 'modal/modal_view_personal_tasks.php';
+require_once 'modal/modal_insert_task.php'; 
 ?>
