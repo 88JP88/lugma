@@ -61,7 +61,7 @@ $sub_domain = $sub_domaincon->dom();
               //var_dump($data);
               // Cerrar la sesión cURL
               curl_close($curl);
-//echo $response1;
+
 if($response1=="true"){
   header ('Location: ../login.php');
 }
