@@ -44,19 +44,21 @@ $sub_domain=$sub_domaincon->dom();
               //var_dump($data);
               // Cerrar la sesión cURL
               curl_close($curl);
-echo $response1;
+//echo $response1;
 if($response1 == "true"){
   $_SESSION["respuesta"]="true";
   $_SESSION["mensaje"]="Repositorio Eliminado Correctamente";
   $_SESSION["error"]=$response1;
-
+  header ('Location: ../api_lugma.php');
 }
 if($response1 != "true"){
   $_SESSION["respuesta"]="false";
   $_SESSION["mensaje"]="No se pudo Eliminar el Repositorio o hubo un error";
   $_SESSION["error"]=$response1;
-
+  header ('Location: ../api_lugma.php');
 }
+
+
 
 
 

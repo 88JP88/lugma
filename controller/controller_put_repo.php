@@ -23,7 +23,7 @@ $sub_domain = $sub_domaincon->dom();
 
               // Definir los datos a enviar en la solicitud POST
               $data = array(
-                  'username' =>$_SESSION['usuario'],
+                  'username' =>$_SESSION['username'],
                   'tittle' => $tittle,
                   'keywords' => $keywords,
                   'type' => $type,
