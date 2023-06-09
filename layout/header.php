@@ -127,7 +127,7 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
 
 
 				<?php
-				echo '<a class="navbar-brand ml-auto"  data-toggle="modal" data-target="#alertModal">'.$_SESSION['profile_id'].' Alertas</a>
+				echo '<a class="navbar-brand ml-auto"  data-toggle="modal" data-target="#alertModal">'.$_SESSION['alert_counter'].' Alertas</a>
 				';?>
 				<a class="navbar-brand ml-auto" href="controller/controller_post_validate_out.php">#-Notificaciones</a>
 				<!-- Logo en la parte derecha del navbar -->
