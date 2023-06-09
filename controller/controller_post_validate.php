@@ -59,7 +59,7 @@ if($response1 != "true"){
   $_SESSION["error"]=$response1;
   $_SESSION['usuario']=$user;
  
-  header ('Location: controller_post_validate2.php');
+  header ('Location: ../login.php');
 }
 
 

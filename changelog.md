@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.3.0-alpha] - 2023-06-09
+- cambios en login
 ## [0.2.2-alpha] - 2023-06-09
 - corrección footers
 ## [0.2.1-alpha] - 2023-06-09
