@@ -11,6 +11,7 @@
 
 	<div class="login">
 		<h1>Iniciar Sesión</h1>
+    
 		<form method="post" action="controller/controller_post_validate.php">
 	<label for="usuario">Usuario</label>
 	<input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario">

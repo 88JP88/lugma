@@ -76,9 +76,7 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
   </div>
 </li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="#">Contacto</a>
-					</li>
+					
         `);
     }
     if (lnameValue === "teacher" ||lnameValue === "coordinate" ) {
@@ -101,9 +99,7 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
 		<li class="nav-item">
 						<a class="nav-link" href="#">Notas</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Grupos</a>
-					</li>
+					
         `);
     }
 </script>
@@ -112,7 +108,9 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
 
 
 				
-					
+<li class="nav-item">
+						<a class="nav-link" href="#">Contacto</a>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
