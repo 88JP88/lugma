@@ -135,11 +135,17 @@ echo '<script>
   <main>
     <div id="inbox" class="email-section">
       <h2>Inbox</h2>
+      <?php
+      require_once 'layout/table_mail_inbox.php';
+      ?>
       <p>Contenido del inbox...</p>
     </div>
 
     <div id="enviados" class="email-section">
       <h2>Enviados</h2>
+      <?php
+      require_once 'layout/table_mail_send.php';
+      ?>
       <p>Contenido de los correos enviados...</p>
     </div>
 
@@ -161,22 +167,22 @@ echo '<script>
 
     <div id="form" class="form-section">
       <h2>Enviar Mensaje</h2>
-      <form>
+      <form method="post" action="../lugma/controller/controller_post_mail.php">
         <div class="form-input">
           <label for="destinatario">Destinatario:</label>
-          <input type="text" id="destinatario" required>
+          <input type="text" id="destinatario" name ="destinatario" required>
         </div>
         <div class="form-input">
           <label for="asunto">Asunto:</label>
-          <input type="text" id="asunto" required>
+          <input type="text" id="asunto" name ="asunto" required>
         </div>
         <div class="form-input">
           <label for="copia">Copia:</label>
-          <input type="text" id="copia">
+          <input type="text" id="copia" name ="copia">
         </div>
         <div class="form-input">
           <label for="contenido">Contenido:</label>
-          <textarea id="contenido" class="form-textarea" required></textarea>
+          <textarea id="contenido" class="form-textarea" name ="contenido" required></textarea>
         </div>
         <button type="submit">Enviar</button>
       </form>

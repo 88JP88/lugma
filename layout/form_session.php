@@ -211,7 +211,9 @@ $version_view=new model_ver;
 $version=$version_view->versioning();
     echo $ano_actual." <br>version ".$version;
     $_SESSION['current_version']=$version;
-?></p>
+    
+?>
+</p>
 	</footer>
 </body>
 </html>
