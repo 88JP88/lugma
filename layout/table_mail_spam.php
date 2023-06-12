@@ -19,7 +19,7 @@
   $sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
-  const profileId11111c = sessionStorage.getItem("profile");
+  const profileId11111c = sessionStorage.getItem("my_profile");
   const apiUrlqqqqc = `'.$sub_domain.'/lugmacore/apiCom/v1/getSpamMail/${profileId11111c}`;
  // Función para obtener los datos del API
  async function getCharactersqqqqc() {

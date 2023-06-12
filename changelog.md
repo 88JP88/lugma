@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.4.1-alpha] - 2023-06-12
+- arreglo de variables en mails
 ## [0.4.1-alpha] - 2023-06-11
 - arreglo de mail interno
 - consultas estilo SPA
