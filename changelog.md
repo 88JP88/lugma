@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.1-alpha] - 2023-06-11
+- arreglo de mail interno
+- consultas estilo SPA
+- nuevos módulos (leidos, importantes)
 ## [0.4.0-alpha] - 2023-06-11
 - primeras funcionalidades del correo interno
 ## [0.3.1-alpha] - 2023-06-09

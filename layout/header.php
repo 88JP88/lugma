@@ -72,7 +72,7 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
 	  <a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#modalAddAlert">Alertas</a>
       <a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#groupsModal">Grupos</a>
       
-    <a class="dropdown-item" href="mail.php?my_profile=${my_profile}">Correo</a>
+    <a class="dropdown-item" href="mail.php?my_profile=${my_profile}" target="_blank">Correo</a>
   </div>
 </li>
 

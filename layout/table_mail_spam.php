@@ -1,11 +1,10 @@
 
-<table id="mail-table" class="table table-striped">
+<table id="mailspam-table" class="table table-striped">
   <thead style="position: sticky; top: 0; background-color: #fff;">
     <tr>
     <th>Acciones</th>
-      <th>Remitente</th>
+      <th>Destinatario</th>
       <th>Asunto</th>
-      
       <th>Copia</th>
       <th>Contenido</th>
       <th>Categoría</th>
@@ -20,15 +19,15 @@
   $sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
-  const profileId1111 = sessionStorage.getItem("username");
-  const apiUrlqqq = `'.$sub_domain.'/lugmacore/apiCom/v1/getInboxMail/${profileId1111}`;
+  const profileId11111c = sessionStorage.getItem("profile");
+  const apiUrlqqqqc = `'.$sub_domain.'/lugmacore/apiCom/v1/getSpamMail/${profileId11111c}`;
  // Función para obtener los datos del API
- async function getCharactersqqq() {
+ async function getCharactersqqqqc() {
 	
-	fetch(apiUrlqqq)
+	fetch(apiUrlqqqqc)
   .then(response => response.json())
   .then(data => {
-    const membergroupsTableBody = document.querySelector("#mail-table tbody");
+    const membergroupsTableBody = document.querySelector("#mailspam-table tbody");
     // Borramos los datos antiguos
     membergroupsTableBody.innerHTML = "";
     data.mail_constructor.forEach(mail => {
@@ -38,8 +37,9 @@
       <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Spam</a><br>
       <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Visto</a><br>
       <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Importantes</a>
-     </td>
-        <td>${mail.sender_id}</td>
+     
+      </td>
+        <td>${mail.receiver_id}</td>
         <td>${mail.name}</td>
         
         <td>${mail.copy}</td>
@@ -48,8 +48,8 @@
         
 
         <td>
-      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Reciclar</a>
-     </td>
+        <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Reciclar</a>
+       </td>
        
         
       `;
@@ -65,7 +65,7 @@
  }
  
  // Llamar a la función para obtener los datos del API
- getCharactersqqq();
+ getCharactersqqqqc();
  
 
 

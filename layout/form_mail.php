@@ -124,48 +124,18 @@ echo '<script>
 
   <nav>
     <ul>
-      <li><a href="#" onclick="changeSection('inbox')">Inbox</a></li>
-      <li><a href="#" onclick="changeSection('enviados')">Enviados</a></li>
-      <li><a href="#" onclick="changeSection('spam')">Spam</a></li>
-      <li><a href="#" onclick="changeSection('importantes')">Importantes</a></li>
+      <li><a href="#" onclick="changeSection('inbox'); getCharactersqqq()">Inbox</a></li>
+      <li><a href="#" onclick="changeSection('enviados'); getCharactersqqqq()">Enviados</a></li>
+      <li><a href="#" onclick="changeSection('spam'); getCharactersqqqqc()">Spam</a></li>
+      <li><a href="#" onclick="changeSection('importantes'); getCharactersqqqqx()">Importantes</a></li>
+      <li><a href="#" onclick="changeSection('leidos');getCharactersqqqqcz()">Leídos</a></li>
       <li><a href="#" onclick="showForm()">Más</a></li>
     </ul>
   </nav>
 
   <main>
-    <div id="inbox" class="email-section">
-      <h2>Inbox</h2>
-      <?php
-      require_once 'layout/table_mail_inbox.php';
-      ?>
-      <p>Contenido del inbox...</p>
-    </div>
 
-    <div id="enviados" class="email-section">
-      <h2>Enviados</h2>
-      <?php
-      require_once 'layout/table_mail_send.php';
-      ?>
-      <p>Contenido de los correos enviados...</p>
-    </div>
-
-    <div id="spam" class="email-section">
-      <h2>Spam</h2>
-      <p>Contenido de los correos spam...
-
-
-
-
-      
-      </p>
-    </div>
-
-    <div id="importantes" class="email-section">
-      <h2>Importantes</h2>
-      <p>Contenido de los correos importantes...</p>
-    </div>
-
-    <div id="form" class="form-section">
+  <div id="form" class="form-section">
       <h2>Enviar Mensaje</h2>
       <form method="post" action="../lugma/controller/controller_post_mail.php">
         <div class="form-input">
@@ -187,6 +157,52 @@ echo '<script>
         <button type="submit">Enviar</button>
       </form>
     </div>
+    <div id="inbox" class="email-section">
+      <h2>Inbox</h2>
+      <?php
+      require_once 'layout/table_mail_inbox.php';
+      ?>
+      <p>Contenido del inbox...</p>
+    </div>
+
+    <div id="enviados" class="email-section">
+      <h2>Enviados</h2>
+      <?php
+      require_once 'layout/table_mail_send.php';
+      ?>
+      <p>Contenido de los correos enviados...</p>
+    </div>
+
+    <div id="spam" class="email-section">
+      <h2>Spam</h2>
+      <?php
+      require_once 'layout/table_mail_spam.php';
+      ?>
+      <p>Contenido de los correos spam...
+
+
+
+
+      
+      </p>
+    </div>
+
+    <div id="importantes" class="email-section">
+      <h2>Importantes</h2>
+      <?php
+      require_once 'layout/table_mail_important.php';
+      ?>
+      <p>Contenido de los correos importantes...</p>
+    </div>
+    <div id="leidos" class="email-section">
+      <h2>Leídos</h2>
+      <?php
+      require_once 'layout/table_mail_read.php';
+      ?>
+      <p>Contenido de los correos importantes...</p>
+    </div>
+
+    
   </main>
 
   <script>

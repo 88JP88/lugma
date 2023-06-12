@@ -3,7 +3,7 @@
   <thead style="position: sticky; top: 0; background-color: #fff;">
     <tr>
     <th>Acciones</th>
-      <th>Remitente</th>
+      <th>Destinatario</th>
       <th>Asunto</th>
       <th>Copia</th>
       <th>Contenido</th>
@@ -34,16 +34,22 @@
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      <a class="btn btn-primary" href="group.php?id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Ingresar</a>
+      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Spam</a><br>
+      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Visto</a><br>
+      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Importantes</a>
+     
       </td>
-        <td>${mail.sender_id}</td>
+        <td>${mail.receiver_id}</td>
         <td>${mail.name}</td>
-        <td>${mail.content}</td>
+        
         <td>${mail.copy}</td>
+        <td>${mail.content}</td>
         <td>${mail.category_id}</td>
         
 
-        
+        <td>
+        <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Reciclar</a>
+       </td>
        
         
       `;
