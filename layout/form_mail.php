@@ -125,6 +125,8 @@ echo '<script>
   <nav>
     <ul>
       <li><a href="#" onclick="changeSection('inbox'); getCharactersqqq()">Inbox</a></li>
+      <li><a href="#" onclick="changeSection('copias'); getCharactersqqqr()">Copia</a></li>
+      
       <li><a href="#" onclick="changeSection('enviados'); getCharactersqqqq()">Enviados</a></li>
       <li><a href="#" onclick="changeSection('spam'); getCharactersqqqqc()">Spam</a></li>
       <li><a href="#" onclick="changeSection('importantes'); getCharactersqqqqx()">Importantes</a></li>
@@ -163,6 +165,13 @@ echo '<script>
       require_once 'layout/table_mail_inbox.php';
       ?>
       <p>Contenido del inbox...</p>
+    </div>
+    <div id="copias" class="email-section">
+      <h2>Copia</h2>
+      <?php
+      require_once 'layout/table_mail_copy.php';
+      ?>
+      <p>Contenido del Copia...</p>
     </div>
 
     <div id="enviados" class="email-section">
