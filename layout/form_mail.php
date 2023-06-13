@@ -136,91 +136,70 @@ echo '<script>
       <li><a href="#" onclick="showForm()">Más</a></li>
     </ul>
   </nav>
+  <div id="form" class="form-section" style="text-align: center;">
+    <h2>Enviar Mensaje</h2>
+    <form method="post" action="../lugma/controller/controller_post_mail.php">
+      <div class="form-input">
+        <label for="destinatario">Destinatario:</label>
+        <input type="text" id="destinatario" name="destinatario" required>
+      </div>
+      <div class="form-input">
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" name="asunto" required>
+      </div>
+      <div class="form-input">
+        <label for="copia">Copia:</label>
+        <input type="text" id="copia" name="copia">
+      </div>
+      <div class="form-input">
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" class="form-textarea" name="contenido" required></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div><br>
+  <main style="display: flex; justify-content: center; align-items: center;">
+  
+  <div id="inbox" class="email-section" style="text-align: center;">
+    <h2>Inbox</h2>
+    <?php require_once 'layout/table_mail_inbox.php'; ?>
+    <p>Contenido del inbox...</p>
+  </div>
+  <div id="copias" class="email-section" style="text-align: center;">
+    <h2>Copia</h2>
+    <?php require_once 'layout/table_mail_copy.php'; ?>
+    <p>Contenido del Copia...</p>
+  </div>
 
-  <main>
+  <div id="enviados" class="email-section" style="text-align: center;">
+    <h2>Enviados</h2>
+    <?php require_once 'layout/table_mail_send.php'; ?>
+    <p>Contenido de los correos enviados...</p>
+  </div>
 
-  <div id="form" class="form-section">
-      <h2>Enviar Mensaje</h2>
-      <form method="post" action="../lugma/controller/controller_post_mail.php">
-        <div class="form-input">
-          <label for="destinatario">Destinatario:</label>
-          <input type="text" id="destinatario" name ="destinatario" required>
-        </div>
-        <div class="form-input">
-          <label for="asunto">Asunto:</label>
-          <input type="text" id="asunto" name ="asunto" required>
-        </div>
-        <div class="form-input">
-          <label for="copia">Copia:</label>
-          <input type="text" id="copia" name ="copia">
-        </div>
-        <div class="form-input">
-          <label for="contenido">Contenido:</label>
-          <textarea id="contenido" class="form-textarea" name ="contenido" required></textarea>
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-    <div id="inbox" class="email-section">
-      <h2>Inbox</h2>
-      <?php
-      require_once 'layout/table_mail_inbox.php';
-      ?>
-      <p>Contenido del inbox...</p>
-    </div>
-    <div id="copias" class="email-section">
-      <h2>Copia</h2>
-      <?php
-      require_once 'layout/table_mail_copy.php';
-      ?>
-      <p>Contenido del Copia...</p>
-    </div>
+  <div id="spam" class="email-section" style="text-align: center;">
+    <h2>Spam</h2>
+    <?php require_once 'layout/table_mail_spam.php'; ?>
+    <p>Contenido de los correos spam...</p>
+  </div>
 
-    <div id="enviados" class="email-section">
-      <h2>Enviados</h2>
-      <?php
-      require_once 'layout/table_mail_send.php';
-      ?>
-      <p>Contenido de los correos enviados...</p>
-    </div>
+  <div id="importantes" class="email-section" style="text-align: center;">
+    <h2>Importantes</h2>
+    <?php require_once 'layout/table_mail_important.php'; ?>
+    <p>Contenido de los correos importantes...</p>
+  </div>
+  <div id="leidos" class="email-section" style="text-align: center;">
+    <h2>Leídos</h2>
+    <?php require_once 'layout/table_mail_read.php'; ?>
+    <p>Contenido de los correos leídos...</p>
+  </div>
+  <div id="papelera" class="email-section" style="text-align: center;">
+    <h2>Eliminados</h2>
+    <?php require_once 'layout/table_mail_recicler.php'; ?>
+    <p>Contenido de los correos eliminados...</p>
+  </div>
+</main>
 
-    <div id="spam" class="email-section">
-      <h2>Spam</h2>
-      <?php
-      require_once 'layout/table_mail_spam.php';
-      ?>
-      <p>Contenido de los correos spam...
-
-
-
-
-      
-      </p>
-    </div>
-
-    <div id="importantes" class="email-section">
-      <h2>Importantes</h2>
-      <?php
-      require_once 'layout/table_mail_important.php';
-      ?>
-      <p>Contenido de los correos importantes...</p>
-    </div>
-    <div id="leidos" class="email-section">
-      <h2>Leídos</h2>
-      <?php
-      require_once 'layout/table_mail_read.php';
-      ?>
-      <p>Contenido de los correos importantes...</p>
-    </div>
-    <div id="papelera" class="email-section">
-      <h2>Eliminados</h2>
-      <?php
-      require_once 'layout/table_mail_recicler.php';
-      ?>
-      <p>Contenido de los correos importantes...</p>
-    </div>
-    
-  </main>
 
   <script>
     // Función para cambiar la sección activa
