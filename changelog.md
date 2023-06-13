@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.5.0-alpha] - 2023-06-12
+- arreglo de variables en mails y nuevas funciones y vistas
 ## [0.4.2-alpha] - 2023-06-12
 - arreglo de variables en mails
 - nueva vista en mail

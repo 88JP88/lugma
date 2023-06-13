@@ -131,6 +131,8 @@ echo '<script>
       <li><a href="#" onclick="changeSection('spam'); getCharactersqqqqc()">Spam</a></li>
       <li><a href="#" onclick="changeSection('importantes'); getCharactersqqqqx()">Importantes</a></li>
       <li><a href="#" onclick="changeSection('leidos');getCharactersqqqqcz()">Leídos</a></li>
+      <li><a href="#" onclick="changeSection('papelera');getCharactersqqqqcw()">Eliminados</a></li>
+     
       <li><a href="#" onclick="showForm()">Más</a></li>
     </ul>
   </nav>
@@ -210,7 +212,13 @@ echo '<script>
       ?>
       <p>Contenido de los correos importantes...</p>
     </div>
-
+    <div id="papelera" class="email-section">
+      <h2>Eliminados</h2>
+      <?php
+      require_once 'layout/table_mail_recicler.php';
+      ?>
+      <p>Contenido de los correos importantes...</p>
+    </div>
     
   </main>
 

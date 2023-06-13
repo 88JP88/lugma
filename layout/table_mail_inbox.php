@@ -21,6 +21,7 @@
 	echo '
 	<script>
   const profileId1111 = sessionStorage.getItem("username");
+  const id_profile = sessionStorage.getItem("my_profile");
   const apiUrlqqq = `'.$sub_domain.'/lugmacore/apiCom/v1/getInboxMail/${profileId1111}`;
  // Función para obtener los datos del API
  async function getCharactersqqq() {
@@ -35,9 +36,9 @@
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Spam</a><br>
-      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Visto</a><br>
-      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Importantes</a>
+      <a class="btn btn-primary" href="controller/controller_put_category_mail.php?mail_id=${mail.general_id}&username=${profileId1111}&value=spam&profile_id=${id_profile}">Spam</a><br>
+      <a class="btn btn-primary" href="controller/controller_put_category_mail.php?mail_id=${mail.general_id}&username=${profileId1111}&value=viewed&profile_id=${id_profile}">Leidos</a><br> 
+           <a class="btn btn-primary" href="controller/controller_put_category_mail.php?mail_id=${mail.general_id}&username=${profileId1111}&value=important&profile_id=${id_profile}">Importantes</a><br>
      </td>
         <td>${mail.sender_id}</td>
         <td>${mail.name}</td>
@@ -48,8 +49,8 @@
         
 
         <td>
-      <a class="btn btn-primary" href="mail_edition.php?mail_id=${mail.mail_id}&profile=${mail.sender_id}&my_profile=${profileId1111}" target="_blank">Reciclar</a>
-     </td>
+        <a class="btn btn-primary" href="controller/controller_put_category_mail.php?mail_id=${mail.general_id}&username=${profileId1111}&value=rec&profile_id=${id_profile}">Reciclar</a><br>
+    </td>
        
         
       `;
