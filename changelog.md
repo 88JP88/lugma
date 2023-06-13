@@ -1,5 +1,6 @@
 # Changelog
-
+## [0.5.3-alpha] - 2023-06-12
+- actualización de interfaz en mail
 ## [0.5.2-alpha] - 2023-06-12
 - actualización de interfaz en mail
 ## [0.5.1-alpha] - 2023-06-12

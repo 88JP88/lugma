@@ -141,23 +141,23 @@ echo '<script>
     <form method="post" action="../lugma/controller/controller_post_mail.php">
       <div class="form-input">
         <label for="destinatario">Destinatario:</label>
-        <input type="text" id="destinatario" name="destinatario" required>
+        <input type="text" id="destinatario" name="destinatario" required placeholder="solo un destinatario">
       </div>
       <div class="form-input">
         <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" required>
+        <input type="text" id="asunto" name="asunto" required placeholder="asunto">
       </div>
       <div class="form-input">
-        <label for="copia">Copia:</label>
-        <input type="text" id="copia" name="copia">
+        <label for="copia">Con Copia:</label>
+        <input type="text" id="copia" name="copia" placeholder="separado por espacio">
       </div>
       <div class="form-input">
         <label for="contenido">Contenido:</label>
-        <textarea id="contenido" class="form-textarea" name="contenido" required></textarea>
+        <textarea required id="contenido" class="form-textarea" name="contenido"  placeholder="escribe tu menssaje"></textarea>
       </div>
       <button type="submit">Enviar</button>
     </form>
-  </div><br>
+  </div>
   <main style="display: flex; justify-content: center; align-items: center;">
   
   <div id="inbox" class="email-section" style="text-align: center;">
