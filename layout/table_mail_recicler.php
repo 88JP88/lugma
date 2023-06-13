@@ -20,7 +20,8 @@
 	echo '
 	<script>
   const profileId11111cw = sessionStorage.getItem("my_profile");
-  const apiUrlqqqqcw = `'.$sub_domain.'/lugmacore/apiCom/v1/getReciclerMail/${profileId11111cw}`;
+  const my_profile = sessionStorage.getItem("username");
+  const apiUrlqqqqcw = `'.$sub_domain.'/lugmacore/apiCom/v1/getReciclerMail/${profileId11111cw}/${my_profile}`;
  // Función para obtener los datos del API
  async function getCharactersqqqqcw() {
 	

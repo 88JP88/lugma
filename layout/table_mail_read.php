@@ -20,7 +20,8 @@
 	echo '
 	<script>
   const profileId11111cz = sessionStorage.getItem("my_profile");
-  const apiUrlqqqqcz = `'.$sub_domain.'/lugmacore/apiCom/v1/getReadMail/${profileId11111cz}`;
+  const my_profile1 = sessionStorage.getItem("username");
+  const apiUrlqqqqcz = `'.$sub_domain.'/lugmacore/apiCom/v1/getReadMail/${profileId11111cz}/${my_profile1}`;
  // Función para obtener los datos del API
  async function getCharactersqqqqcz() {
 	
