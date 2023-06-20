@@ -34,6 +34,15 @@ require_once 'modal/modal_my_teachers_not_invite.php';
 require_once 'modal/modal_my_teachers_create.php';
 require_once 'modal/modal_my_teachers_filter.php';
 
+require_once 'modal/modal_coors.php';
+require_once 'modal/modal_my_coors.php';
+require_once 'modal/modal_my_coors_profile.php';
+require_once 'modal/modal_my_coors_lack_profile.php';
+require_once 'modal/modal_my_coors_invite.php';
+require_once 'modal/modal_my_coors_not_invite.php';
+require_once 'modal/modal_my_coors_create.php';
+require_once 'modal/modal_my_coors_filter.php';
+
 require_once 'layout/form_session.php';
 require_once 'modal/modal_profile.php';
 require_once 'modal/modal_edit_profile.php';
