@@ -22,7 +22,7 @@
 	<script>
   const profileId1111 = sessionStorage.getItem("username");
   const id_profile = sessionStorage.getItem("my_profile");
-  const apiUrlqqq = `'.$sub_domain.'/lugmacore/apiCom/v1/getInboxMail/${profileId1111}`;
+  const apiUrlqqq = `'.$sub_domain.'/lugmacore/apiCom/v1/getInboxMail/${profileId1111}/${id_profile}`;
  // Función para obtener los datos del API
  async function getCharactersqqq() {
 	

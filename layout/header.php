@@ -82,35 +82,29 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
     if (lnameValue === "teacher" ||lnameValue === "coordinate" ) {
         document.write(`
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recursos</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Ingeniería de software</a>
-                    <a class="dropdown-item" href="#">Ingeniería civil</a>
-                    <a class="dropdown-item" href="#">Ingeniería mecánica</a>
+				<a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#studentModal">Estudiantes</a>
+      
+                    <a class="dropdown-item" href="#">Profesores</a>
+                    <a class="dropdown-item" href="#">Coordinadores</a>
+					<a class="dropdown-item" href="#">Materias</a>
+					<a class="dropdown-item" href="#">Ciclos</a>
+					<a class="dropdown-item" href="#">Carreras/cursos</a>
+					<a class="dropdown-item" href="#">Notas</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Estudiantes</a>
-            </li>
+            
         `);
     }
-	if (lnameValue === "teacher" || lnameValue === "student" || lnameValue === "coordinate") {
-        document.write(`
-		<li class="nav-item">
-						<a class="nav-link" href="#">Notas</a>
-					</li>
-					
-        `);
-    }
+	
 </script>
 
 					
 
 
 				
-<li class="nav-item">
-						<a class="nav-link" href="#">Contacto</a>
-					</li>
+
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">

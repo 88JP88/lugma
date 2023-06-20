@@ -209,8 +209,10 @@ function ejecutarFunciones() {
     require_once 'version/version.php';
 $version_view=new model_ver;
 $version=$version_view->versioning();
-    echo $ano_actual." <br>version ".$version;
+    echo $ano_actual.' <br><a class="btn btn-secondary" href="version.php" align="center">';echo "version ".$version; echo '</a><br>'
+    ;
     $_SESSION['current_version']=$version;
+    
     
 ?>
 </p>

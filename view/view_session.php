@@ -15,10 +15,20 @@ require_once 'modal/modal_moder_groups.php';
 require_once 'modal/modal_member_groups.php';
 require_once 'modal/modal_created_groups.php';
 require_once 'modal/modal_public_groups.php';
+require_once 'modal/modal_students.php';
+require_once 'modal/modal_my_students.php';
+require_once 'modal/modal_my_students_profile.php';
+require_once 'modal/modal_my_students_lack_profile.php';
+require_once 'modal/modal_my_students_invite.php';
+require_once 'modal/modal_my_students_not_invite.php';
+require_once 'modal/modal_my_students_create.php';
+require_once 'modal/modal_my_students_filter.php';
+
 require_once 'layout/form_session.php';
 require_once 'modal/modal_profile.php';
 require_once 'modal/modal_edit_profile.php';
 require_once 'modal/modal_change_password.php';
+
 require_once 'layout/table_view_schedule.php';
 
 
