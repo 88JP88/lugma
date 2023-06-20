@@ -13,6 +13,8 @@
       <th></th>
       <th>ApiUsers</th>
       <th></th>
+      <th>ApiResources</th>
+      <th></th>
       <th>ApiLugmacore</th>
     </tr>
   </thead>
@@ -60,6 +62,8 @@
         <td>${alert.apiTools}</td>
         <td></td>
         <td>${alert.apiUsers}</td>
+        <td></td>
+        <td>${alert.apiResources}</td>
         <td></td>
         <td>${alert.apiLugmacore}</td>
         

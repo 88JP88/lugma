@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.6.0-alpha] - 2023-06-20
+- Nueva fuuncionalidad de profesores
 ## [0.6.0-alpha] - 2023-06-19
 - Nueva fuuncionalidad de estudiantes
 ## [0.5.3-alpha] - 2023-06-12

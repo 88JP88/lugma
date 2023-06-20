@@ -1,5 +1,5 @@
-<form>
-<table id="mystudentsfilter-table" class="table table-striped">
+
+<table id="myteachersnotinvite-table" class="table table-striped">
   <thead style="position: sticky; top: 0; background-color: #fff;">
     <tr>
     <th>Acciones</th>
@@ -21,31 +21,31 @@
          
 	
 	<?php
-//session_start();
+
 require_once 'env/domain.php';
 $sub_domaincon=new model_dom;
 $sub_domain=$sub_domaincon->dom();
 	echo '
 	<script>
 		
-  //const student_filter = sessionStorage.getItem("student_filter");
-  const subdominiofilter = `'.$sub_domain.'/lugmacore/apiResources/v1/filterMyStudents/'.$_SESSION['profile_id'].'/'.$_GET['filter'].'/'.$_GET['type'].'`;
+  //const my_profyle = sessionStorage.getItem("profile");
+  const subdominioteachersnotinvite = `'.$sub_domain.'/lugmacore/apiResources/v1/allMyTeachersInviteNotResponse/${my_profyle}`;
 
 
  // Función para obtener los datos del API
- async function getStudentsFilter() {
+ async function getTeachersNotInvite() {
 	
-	fetch(subdominiofilter)
+	fetch(subdominioteachersnotinvite)
   .then(response => response.json())
   .then(data => {
-    const publicgroupsTableBody = document.querySelector("#mystudentsfilter-table tbody");
+    const publicgroupsTableBody = document.querySelector("#myteachersnotinvite-table tbody");
     // Borramos los datos antiguos
     publicgroupsTableBody.innerHTML = "";
-    data.students.forEach(student => {
+    data.teachers.forEach(student => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      
+      <a class="btn btn-primary" href="group.php?student_id=${student.teacher_id}&my_profile=${student.profile_id}&owner_id=${student.owner_id}">Reenviar Invitación</a>
       <a class="btn btn-primary" href="group.php?student_id=${student.student_id}&my_profile=${student.profile_id}&owner_id=${student.owner_id}">Abrir</a>
         </td>
         <td>${student.name}</td>
@@ -77,13 +77,15 @@ $sub_domain=$sub_domaincon->dom();
  }
  
  // Llamar a la función para obtener los datos del API
- getStudentsFilter();
+ getTeachersNotInvite();
  
 
 
 	</script>
 
 ';?>  
+
+
 
 <div id="publicgroups-container"></div>
 
@@ -96,4 +98,4 @@ $sub_domain=$sub_domaincon->dom();
 
 </tbody>
           </table>
-</form>
+       

@@ -85,8 +85,9 @@ const user_rol = "' . $_SESSION["user_rol"] . '";
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recursos</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#studentModal">Estudiantes</a>
+				<a href="login.php" class="dropdown-item" data-toggle="modal" data-target="#teacherModal">Profesores</a>
       
-                    <a class="dropdown-item" href="#">Profesores</a>
+                    
                     <a class="dropdown-item" href="#">Coordinadores</a>
 					<a class="dropdown-item" href="#">Materias</a>
 					<a class="dropdown-item" href="#">Ciclos</a>

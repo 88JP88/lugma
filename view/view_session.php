@@ -15,6 +15,7 @@ require_once 'modal/modal_moder_groups.php';
 require_once 'modal/modal_member_groups.php';
 require_once 'modal/modal_created_groups.php';
 require_once 'modal/modal_public_groups.php';
+
 require_once 'modal/modal_students.php';
 require_once 'modal/modal_my_students.php';
 require_once 'modal/modal_my_students_profile.php';
@@ -23,6 +24,15 @@ require_once 'modal/modal_my_students_invite.php';
 require_once 'modal/modal_my_students_not_invite.php';
 require_once 'modal/modal_my_students_create.php';
 require_once 'modal/modal_my_students_filter.php';
+
+require_once 'modal/modal_teachers.php';
+require_once 'modal/modal_my_teachers.php';
+require_once 'modal/modal_my_teachers_profile.php';
+require_once 'modal/modal_my_teachers_lack_profile.php';
+require_once 'modal/modal_my_teachers_invite.php';
+require_once 'modal/modal_my_teachers_not_invite.php';
+require_once 'modal/modal_my_teachers_create.php';
+require_once 'modal/modal_my_teachers_filter.php';
 
 require_once 'layout/form_session.php';
 require_once 'modal/modal_profile.php';

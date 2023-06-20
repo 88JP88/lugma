@@ -1,5 +1,5 @@
 <form>
-<table id="mystudentsfilter-table" class="table table-striped">
+<table id="myteachersfilter-table" class="table table-striped">
   <thead style="position: sticky; top: 0; background-color: #fff;">
     <tr>
     <th>Acciones</th>
@@ -29,19 +29,19 @@ $sub_domain=$sub_domaincon->dom();
 	<script>
 		
   //const student_filter = sessionStorage.getItem("student_filter");
-  const subdominiofilter = `'.$sub_domain.'/lugmacore/apiResources/v1/filterMyStudents/'.$_SESSION['profile_id'].'/'.$_GET['filter'].'/'.$_GET['type'].'`;
+  const subdominiofilterteacher = `'.$sub_domain.'/lugmacore/apiResources/v1/filterMyTeachers/'.$_SESSION['profile_id'].'/'.$_GET['filter'].'/'.$_GET['type'].'`;
 
 
  // Función para obtener los datos del API
- async function getStudentsFilter() {
+ async function getTeachersFilter() {
 	
-	fetch(subdominiofilter)
+	fetch(subdominiofilterteacher)
   .then(response => response.json())
   .then(data => {
-    const publicgroupsTableBody = document.querySelector("#mystudentsfilter-table tbody");
+    const publicgroupsTableBody = document.querySelector("#myteachersfilter-table tbody");
     // Borramos los datos antiguos
     publicgroupsTableBody.innerHTML = "";
-    data.students.forEach(student => {
+    data.teachers.forEach(student => {
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
@@ -77,7 +77,7 @@ $sub_domain=$sub_domaincon->dom();
  }
  
  // Llamar a la función para obtener los datos del API
- getStudentsFilter();
+ getTeachersFilter();
  
 
 
