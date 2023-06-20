@@ -45,7 +45,7 @@ $sub_domain=$sub_domaincon->dom();
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>
-      <a class="btn btn-primary" href="controller/controller_post_teachers_post.php?coor_id=${student.coor_id}&s_name=${student.name}&s_lname=${student.last_name}&my_profile=${student.profile_id}&owner_id=${student.owner_id}">Crear Perfil</a>
+      <a class="btn btn-primary" href="controller/controller_post_coors_post.php?coor_id=${student.coor_id}&s_name=${student.name}&s_lname=${student.last_name}&my_profile=${student.profile_id}&owner_id=${student.owner_id}">Crear Perfil</a>
       <a class="btn btn-primary" href="group.php?student_id=${student.coor_id}&my_profile=${student.profile_id}&owner_id=${student.owner_id}">Abrir</a>
        
       </td>
